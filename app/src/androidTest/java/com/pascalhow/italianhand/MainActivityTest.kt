@@ -1,6 +1,7 @@
 package com.pascalhow.italianhand
 
 import android.content.Intent
+import android.os.SystemClock
 import androidx.test.espresso.Espresso.onView
 import androidx.test.espresso.action.ViewActions.click
 import androidx.test.espresso.assertion.ViewAssertions.matches
@@ -30,6 +31,8 @@ class MainActivityTest {
         activityRule.launchActivity(Intent())
 
         onView(withText("Ciao")).perform(click())
+
+        SystemClock.sleep(2000)
         onView(withText("I HATE pineapple pizza")).check(matches(isDisplayed()))
     }
 }
