@@ -35,4 +35,14 @@ class MainActivityTest {
         SystemClock.sleep(2000)
         onView(withText("I HATE pineapple pizza")).check(matches(isDisplayed()))
     }
+
+    @Test
+    fun testButtonClickWithFailure() {
+        activityRule.launchActivity(Intent())
+
+        onView(withText("Ciao")).perform(click())
+
+        SystemClock.sleep(2000)
+        onView(withText("I HATE Capriciosa pizza")).check(matches(isDisplayed()))
+    }
 }
