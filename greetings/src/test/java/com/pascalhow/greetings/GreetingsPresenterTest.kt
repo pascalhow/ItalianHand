@@ -1,18 +1,18 @@
-package com.pascalhow.italianhand
+package com.pascalhow.greetings
 
 import io.mockk.*
 import org.junit.Assert.assertEquals
 import org.junit.Before
 import org.junit.Test
 
-class MainPresenterTest {
+class GreetingsPresenterTest {
 
-    private lateinit var presenter: MainContract.Presenter
-    private val view: MainContract.View = mockk()
+    private lateinit var presenter: GreetingsContract.Presenter
+    private val view: GreetingsContract.View = mockk()
 
     @Before
     fun setup() {
-        presenter = MainPresenter()
+        presenter = GreetingsPresenter()
     }
 
     @Test
@@ -24,8 +24,8 @@ class MainPresenterTest {
     fun `test Show Hand Italian`() {
         presenter.attach(view)
 
-        every {view.showItalianHand()} just runs
-        every {view.showOfferPizza()} just runs
+        every { view.showItalianHand() } just runs
+        every { view.showOfferPizza() } just runs
 
         presenter.offerPineapplePizza()
 

@@ -1,6 +1,6 @@
-package com.pascalhow.italianhand
+package com.pascalhow.greetings
 
-interface MainContract {
+interface GreetingsContract {
 
     interface View {
         fun showHandItalian()

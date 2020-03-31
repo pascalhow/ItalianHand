@@ -1,15 +1,15 @@
-package com.pascalhow.italianhand
+package com.pascalhow.greetings
 
-class MainPresenter : MainContract.Presenter {
+class GreetingsPresenter: GreetingsContract.Presenter {
 
-    private var internalView: MainContract.View? = null
+    private var internalView: GreetingsContract.View? = null
 
-    private val view: MainContract.View
+    private val view: GreetingsContract.View
         get() {
             return internalView ?: throw IllegalStateException("Accessing view while detached")
         }
 
-    override fun attach(view: MainContract.View) {
+    override fun attach(view: GreetingsContract.View) {
         internalView = view
     }
 

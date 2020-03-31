@@ -1,4 +1,4 @@
-apply plugin: 'com.android.application'
+apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 
@@ -7,7 +7,6 @@ android {
     buildToolsVersion "29.0.2"
 
     defaultConfig {
-        applicationId "com.pascalhow.italianhand"
         minSdkVersion 16
         targetSdkVersion 29
         versionCode 1
@@ -16,6 +15,7 @@ android {
         multiDexEnabled true
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles 'consumer-rules.pro'
     }
 
     buildTypes {
@@ -30,8 +30,7 @@ android {
 def espressoVersion = '3.2.0'
 
 dependencies {
-    implementation project(':greetings')
-    implementation project(':recipe')
+    api project(':core')
 
     testImplementation 'junit:junit:4.12'
     testImplementation 'io.mockk:mockk:1.9.kotlin12'
@@ -42,4 +41,7 @@ dependencies {
     androidTestImplementation "androidx.test.espresso:espresso-intents:$espressoVersion"
     androidTestImplementation "androidx.test.espresso:espresso-contrib:$espressoVersion"
     androidTestImplementation "androidx.test.espresso:espresso-web:$espressoVersion"
+
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
 }
