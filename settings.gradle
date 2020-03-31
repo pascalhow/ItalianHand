@@ -1,2 +1,6 @@
 rootProject.name='ItalianHand'
 include ':app'
+include ':core'
+include ':recipe'
+include ':text-core'
+include ':greetings'
